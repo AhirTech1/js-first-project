@@ -1,14 +1,4 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-document.querySelector('.message').textContent = 'Correct Number!!';
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 15;
-
-document.querySelector('.guess').value = 15;
-console.log(document.querySelector('.guess').value);
-*/
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;  // is called state variable, cuz it is part of the application state
@@ -28,6 +18,7 @@ document.querySelector('.check').addEventListener('click', function() {
         errorSound.play();
         document.querySelector('.message').textContent = "No number !?";
     } else if (guess < 1 || guess > 20) {
+        errorSound.play();
         document.querySelector('.message').textContent = "Enter a number between 1 and 20!!";
         document.querySelector('.guess').value = '';
     } else {
