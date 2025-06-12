@@ -27,6 +27,9 @@ document.querySelector('.check').addEventListener('click', function() {
     if(!guess) {
         errorSound.play();
         document.querySelector('.message').textContent = "No number !?";
+    } else if (guess < 1 || guess > 20) {
+        document.querySelector('.message').textContent = "Enter a number between 1 and 20!!";
+        document.querySelector('.guess').value = '';
     } else {
         if (guess === secretNumber) {
             successSound.play();
